@@ -1,0 +1,69 @@
+body, html {
+	height: 100%;
+	background-image: url("../images/van_gogh.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+}
+
+.logo {
+	color: #FFFFFF;
+	text-shadow: -2px -2px 0 #4D4644, 2px -2px 0 #4D4644, -2px 2px 0 #4D4644, 2px 2px 0 #4D4644, 4px 4px 0 white, 5px 5px 0 white, 6px 6px 0 white;
+	font-size: 4em;
+}
+
+#canvas {
+	position: relative;
+	border: 8px solid;
+	margin: auto;
+	margin-top: 50px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.centered {
+	position: relative;
+	text-align: center;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #ffffff;
+    color: #000000;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	width: 142px;
+}
+
+button:hover,
+button:focus {
+    background: #bebebe;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+#result {
+	color: #FFFFFF;
+	text-shadow: -2px -2px 0 #4D4644, 2px -2px 0 #4D4644, -2px 2px 0 #4D4644, 2px 2px 0 #4D4644, 4px 4px 0 white, 5px 5px 0 white, 6px 6px 0 white;
+	font-size: 3em;
+}

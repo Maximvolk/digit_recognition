@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maximvolk</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+    <h1 class="logo" align="center">Maxim Volkov</h1>
+
+    <div class="centered">
+			<canvas id="canvas" width="280" height="280"></canvas>
+    </div>
+
+    <div class="centered">
+        <button class="myButton">Predict</button>
+        <button id="clearButton">Clear</button>
+    </div>
+
+    <div class="centered">
+        <h1 id="result"></h1>
+    </div>
+    <script src="../static/js/dr.js"></script>
+    <script src="../static/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript">
+	   		$(".myButton").click(function(){
+	   			$('#result').text('  Predicting...');
+	   			let canvasObj = document.getElementById('canvas');
+	   			let image = canvasObj.toDataURL('image/png');
+	   			$.post('/recognize', {
+	   			    img: image
+                }).done(function(response){
+                    $("#result").text('Predicted output: ' + response['prediction'])
+                }).fail(function(){
+                    $("#result").text('Something went wrong...')
+                });
+	   		});
+
+	   		$("#clearButton").on("click", function() {
+	   		    var canvas = document.querySelector("#canvas");
+	            var context = canvas.getContext("2d");
+
+			    context.clearRect( 0, 0, 280, 280 );
+			    context.fillStyle="white";
+			    context.fillRect(0,0,canvas.width,canvas.height);
+		    });
+    </script>
+</body>
+</html>
